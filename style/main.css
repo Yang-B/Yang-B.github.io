@@ -1,34 +1,33 @@
 body {
   background:white;
   font-family: arial;
+  margin: 0;
+}
+
+header{
+  background:white;
+  padding: 10px 5px 3px 10px;
+  margin: 0px;
+  border-radius: 3px
+}
+
+nav h1{
+  display: inline;
+}
+
+nav ul{
+  display: inline;
 }
 
 nav ul li{
-  list-style-type: none;
+  color: #444;
   display: inline-block;
+  list-style-type: none;
+  padding: 0px 10px
 }
 
-a {
-  color:blue;
-}
-
-img {
-  border: 1px solid #ddd
-  border-radius: 8px;
-  padding: 10px 40px 0px 0px
-}
-
-.column {
-  float: left
-  height: 300px
-}
-
-.left {
-  width: 30%
-}
-
-.right {
-  width: 70%
+nav ul li a{
+  color: #444
 }
 
 .row:after {
@@ -36,3 +35,22 @@ img {
   display: table;
   clear: both;
 }
+
+.column{
+  width: 24%;
+  float: left;
+  padding: 10px 5px 15px 5px
+}
+
+
+.column img {
+  border-radius: 8px;
+  padding: 0px 40px 0px 0px
+}
+
+.column p {
+  padding: 15px 0px 0px 0px
+}
+
+
+
