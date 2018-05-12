@@ -36,19 +36,24 @@ nav ul li a{
   clear: both;
 }
 
-.column{
+.column1{
   width: 24%;
   float: left;
   padding: 10px 5px 15px 5px
 }
 
+.column2{
+  width: 24%;
+  float: right;
+  padding: 10px 5px 15px 5px
+}
 
-.column img {
+.column1 img {
   border-radius: 8px;
   padding: 0px 40px 0px 0px
 }
 
-.column p {
+.column2 p {
   padding: 15px 0px 0px 0px
 }
 
