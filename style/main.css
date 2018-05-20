@@ -36,30 +36,23 @@ nav ul li a{
   clear: both;
 }
 
-.column1{
-  width: 24%;
+.column{
+  width: auto;
   float: left;
   padding: 10px 5px 15px 5px
 }
 
-.column2{
-  width: 24%;
-  float: left;
-  padding: 10px 5px 15px 5px
-}
-
-.column1 img {
+.column img {
   border-radius: 8px;
   padding: 0px 40px 0px 0px
-}
-
-.column2 p {
-  padding: 15px 0px 0px 0px
 }
 
 footer {
   float: left;
   
 }
+
+
+
 
 
