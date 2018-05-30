@@ -1,22 +1,39 @@
 body {
-  background:white;
+  background: white;
   font-family: arial;
   margin: 0;
 }
 
-header{
-  background:white;
-  padding: 10px 5px 3px 10px;
-  margin: 0px;
-  border-radius: 3px
+/* navbar background */
+.navbar {
+    background-color:#878f99;
+    overflow: hidden;
 }
 
-nav h1{
-  display: inline;
+.navbar {
+    float: center;
+    color: #f2f2f2;
+    text-align: center;
+    margin: 8px 30px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+    background-color:black;
+    color: white;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
 }
 
 nav ul{
-  display: inline;
+  background:#b2ad7f;
+  float: left;
 }
 
 nav ul li{
@@ -29,7 +46,9 @@ nav ul li{
 nav ul li a{
   color: #444
 }
-
+.row {
+  display: 
+}
 .row:after {
   content: "";
   display: table;
@@ -44,6 +63,7 @@ nav ul li a{
 
 .column img {
   border-radius: 8px;
+  float: middle;
 }
 
 .column p{
