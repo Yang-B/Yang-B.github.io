@@ -6,13 +6,17 @@ body {
 
 /* navbar background */
 .navbar {
-    display: inline;
+    border-radius: 8px;
+    width: 100%
+    display: inline-block;
     background-color:#878f99;
     overflow: hidden;
     color: #f2f2f2;
-    margin: 8px 30px;
+    margin: 8px 0px;
+    padding: 50px 80px;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 30px;
+    text-align: center;
 }
 
 
@@ -29,21 +33,24 @@ body {
 }
 
 .navbar-header {
-    width: auto;
+    width: 30%;
+    float: center;
     display: inline;
 }
 
 .navbar-aboutme {
-    width: auto;
+    width: 30%;
+    float: center;
     display: inline;
 }
 
 .navbar-publication {
-    width: auto;
+    width: 30%;
+    float: center;
     display: inline;
 }
 
-
+/*
 nav ul{
   background:#b2ad7f;
   float: left;
@@ -59,9 +66,8 @@ nav ul li{
 nav ul li a{
   color: #444
 }
-.row {
-  display: 
-}
+*/
+
 .row:after {
   content: "";
   display: table;
