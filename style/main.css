@@ -6,6 +6,7 @@ body {
 
 /* navbar background */
 .navbar {
+    display: inline;
     background-color:#878f99;
     overflow: hidden;
     color: #f2f2f2;
@@ -27,10 +28,21 @@ body {
     color: white;
 }
 
-.navbar-heade {
+.navbar-header {
     width: auto;
-    display: inline-block;
+    display: inline;
 }
+
+.navbar-aboutme {
+    width: auto;
+    display: inline;
+}
+
+.navbar-publication {
+    width: auto;
+    display: inline;
+}
+
 
 nav ul{
   background:#b2ad7f;
