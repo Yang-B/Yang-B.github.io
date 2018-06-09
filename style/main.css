@@ -1,10 +1,10 @@
 body {
-  background: white;
-  font-family: arial;
+  font-size: 20px;
+  font-family: "Arial";
   margin: 0;
 }
 
-/* navbar background */
+/* navbar background 
 .navbar {
     border-radius: 8px;
     width: 100%
@@ -19,14 +19,11 @@ body {
     text-align: center;
 }
 
-
-/* Change the color of links on hover */
 .navbar a:hover {
     background-color:black;
     color: white;
 }
 
-/* Add a color to the active/current link */
 .navbar a.active {
     background-color: #4CAF50;
     color: white;
@@ -48,7 +45,7 @@ body {
     width: 30%;
     float: center;
     display: inline;
-}
+}*/
 
 /*
 nav ul{
@@ -68,6 +65,49 @@ nav ul li a{
 }
 */
 
+.header {
+  text-align: center;
+  width: 100%
+}
+
+.header h1 {
+  padding: 40px 0px
+}
+
+
+.nav {
+  list-style-type:none;
+  margin:0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #878f99;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.nav li {
+  float:left;
+}
+
+.nav li a {
+  display: block;
+  color:white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: black;
+  color: white;
+}
+
+
+.nav li a.active {
+  background-color: #4CAF50;
+}
+ 
 .row:after {
   content: "";
   display: table;
