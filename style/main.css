@@ -1,7 +1,7 @@
 body {
   font-size: 20px;
   font-family: "Arial";
-  margin: 0;
+  margin: 0px;
 }
 
 
@@ -112,7 +112,8 @@ nav ul li a{
 
 .header {
   text-align: center;
-  width: 100%
+  margin: 0px;
+  width: 100%;
   
 }
 
@@ -162,23 +163,27 @@ nav ul li a{
 .left {
   margin-left: 30%;
   float: center;
+  display: inline-block;
 }
 
 .right {
-  margin-left: 60%;
+  margin-left: 60%; 
+  display: inline-block;
 }
 
 .row img {
   border-radius: 8px;
 }
 
-
+.subtitle {
+  margin: 0px 5px;
+}
 .travel {
   margin: 15px 15px 15px 15px
 }
 
 footer {
-  position: initial;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%
