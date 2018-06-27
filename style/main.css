@@ -68,12 +68,13 @@ body {
 }
 
 .me {
-  width: 23%;/*300px;*/
+  width: 24%;/*300px;*/
   height: 384px;
   /*border: solid green;*/
   display: inline-block;
   margin: 50px 0px 0px 50px;
   vertical-align: top;
+  font-size: 26px;
 }
 
 /* education*/
