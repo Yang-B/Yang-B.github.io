@@ -67,26 +67,6 @@ body {
   overflow: hidden;
 }
 
-.idphoto {
-  width: 50%;
-  height: 384px;
-  display: inline-block;
-  margin: 40px 0px 0px 0px;
-  font-size:10px;
-  color: gray; 
-}
-
-.me {
-  width: 25%;
-  height: 384px;
-  /*border: solid green;*/
-  display: inline-block;
-  margin: 50px 0px 0px;
-  text-align: justify;
-  vertical-align: top;
-  font-size: 26px;
-}
-
 
 .second {
   width: 100%;
