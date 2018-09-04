@@ -4,82 +4,184 @@
 <html>
 
 <head>
-    <title> me </title>
-    <link href="style/main.css" rel="stylesheet" type="text/css"/>
-    <style>
-
-	.period {
-	  /*width: 40%;
-	  height: 384px;
-	  text-align: justify;
-	  vertical-align: top;
-	  border: solid green;
-	  display: inline-block;
-	  margin: 10px 0px 0px 20px;
-	  font-size: 20px;*/
-	}
-	
-	.detail {
-	  text-indent: 100px;
-          /*width: 50%;
-	  height: 384px;
-	  display: inline-block;
-	  font-size:10px;
-	  color: gray; */
-	}
-    </style>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Bo's experience">
+    <title> Bo's experience</title>	
+    <link href="_CSS/main.css" rel="stylesheet" type="text/css"/>
+    <link href="_CSS/experience.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-<div class="header">
-    <h1> Bo Yang </h1>
-</div>
+<div id="page">
+<header>
+    <h1> <a href="index.html">Bo Yang</a> </h1>
+</header>
+    <nav>
+            <ul>
+            <li> <a href="index.html">Home</a> </li>
+            <li> <a class="active">Experience</a> </li>
+            <li> <a href = "publications.html">Publications</a> </li>
+            <li> <a href="interest.html">Travel</a> </li>
+            </ul>
+    </nav>
 
-<ul class="nav">
-    <li> <a href="index.html">Home</a> </li>
-    <li> <a class="active">Experience</a> </li>
-    <li> <a href = "publications.html">Publications</a> </li>
-    <li> <a href="interest.html">Travel</a> </li>
-</ul>
-
-<div class="first">
-<h2 id = "secondtitle">
-	EDUCATION
-</h2>
-<br>
-    <div class="period">
-      <p>2015 - 2019:</p>
+<section class = "education">
+    <div class="content-wrap">
+    <!-- phd -->
+        <div class="col-narrow1">
+            <h2> Education </h2>
+            <h4>University of California, Berkeley (Ph.D.)</h4>
+            2015 - 2019 summer
+	        <br>Mechanical Engineering/Biomechanics 
+            <br><a href="http://oconnell.berkeley.edu/"> Berkeley Biomechanics Lab </a>
+        </div>
+        <div class="col-wide1">
+            <h4><u>Highlight</u></h4>
+           The J. K. Zee Fellowship (2015)<br>
+           SB3C Ph.D. paper compotition finalist (2017)<br>
+                <a href="https://vcresearch.berkeley.edu/news/mechanical-engineering-aid-back-surgery">
+                    Signatures Innovation Fellows (2017-2018)</a>
+                <br> ASME-BED - PhD Level Student Paper Competition and Student Travel Bursary (2016, 2017) 
+        </div>
+    <!-- ms -->
+        <div class="col-narrow2">
+            <h4>University of California, Berkeley (M.S.)</h4>
+            2013 - 2015
+	        <br>Mechanical Engineering/Ocean Engineering 
+        </div>
+        <div class="col-wide2">
+               Jaehne Graduate Scholarship (2013)
+            <br>Master Thesis: The launching of a prolate-spheroidal body in a deep fluid and its descending trajectory
+        </div>
+    <!-- bs -->
+        <div class="col-narrow2">
+            <h4>Dalian University of Technology (B.S.)</h4>
+            2009 - 2013
+	        <br>Naval Architecture and Ocean Engineering 
+        </div>
+        <div class="col-wide2">
+                Daoda Enterprise Scholarship (2011)
+                <br>The Lloyd's Register Educational Trust Scholarship (2013)
+            <br><a href="/Documents/Ship/Design%20Manual.pdf">General Design of a 10000DWT Coastal Product Oil Carrier</a>
+            <br><a href = "Documents/Ship/Shape.pdf">Shape</a>,
+            <a href = "Documents/Ship/Arrangement.pdf">Arrangement</a>,
+            <a href = "Documents/Ship/Cross-Section.pdf">Cross-Section</a>,
+            <a href = "Documents/Ship/Propeller.pdf">Propeller</a>
+        </div>
     </div>
-    <div class="detail">
-	</p>
-      <br><em>Ph.D.</em> Candidate       
-      <br> <a href="http://oconnell.berkeley.edu/"> Berkeley Biomechanics Lab </a> 
-      <br> Mechanical Engineering 
-      <br> University of California, Berkeley
-	</p>    
-</div>
-      <br> Highlights
+</section>
+    
+<section class = "projects">
+       <div class="content-wrap">
+       <h2> Work Experience and Projects </h2>
+    <!-- proj1 -->
+      <h4>Internship at TianMing Data Science Technology<br> (2017 Winter)</h4>
+      <p>
+      <ul class = "bullet">
+          <li>Developed deep convolutional neural network (CNN), including resnet and densenet, to conduct pneumoconiosis
+              diagnosis using chest x-ray images.</li>
+          <li>Developed Python classes and scripts for medical image analysis.</li>
+           <li>Developed algorithms for data augmentation and checking label quality.</li>
+            <li> Developed deep CNN models using mxnet and gluon and deployed them for inference (80%+ accuracy). </li>
+           </ul>
+     </p>
+    <h4> Graduate Student Instructor (GSI) 5 times at UC Berkeley <br>(2013-2018)</h4>
+       <ul class = "bullet">
+           <li> Including one semester Lead GSI of a 260-student MATLAB programming class (Engineering 7). </li>
+            <li>Lead 6 other
+                GSIs to prepare and grade homeworks and exams, give lab sessions, and hold office hours.</li>
+    </ul>
+    <h4>Implementation of a Database in Java<br> Spring (2018) </h4>
+    <ul class="bullet">
+        <li>Implemented persistent B+ trees that mapped keys to records.</li>
+        <li>Implemented table, page, and record iterators.</li>
+        <li>Implemented join algorithms over tables including Page/Block Nested Loop Join, and Sort Merge Join.</li>
+        <li>Cost estimation, maintenance of statistics, and query optimization using System R dynamic programming.</li>
+        <li>Developed a Lock Manager to implement table and page-level locking.</li>
+    </ul>
+    <h4>Application of CNN to Medical Image Detection and Segmentation<br> (2017)</h4>
+        <ul class="bullet">
+            <li>Obtained 1082 slices of 256×256-resolution MRI scans of bovine intervertebral disc (Bruker 7T).</li>
+            <li>Preprocessed images: rotated and transposed images to enlarge total data amount, and labeled each pixel.</li>
+            <li>Improved image classification and segmentation task accuracy drastically to 97%.</li>
+            <li><a href="https://youtu.be/U7yk9PYwnA4">See more</a></li>
+        </ul>
+    <h4>Parallelized transformation from 3D Matrix to Voxel Mesh<br> (2017)</h4>
+        <ul class = "bullet">
+            <li> Developed an algorithm in C++ that was O(n) complexity. </li>
+            <li> Paralleled C++ code using Cuda GPU.</li>
+            <li> Paralleled C++ code using MPI IO (6 × speed up).</li>
+            <ul>
+    </div>
+    </section>
+    
+<!--courses-->
+<section class="courses">
+    <h2> Selected Coursework </h2>
+    <table border="1"  style="width:100%">
+      <tr>
+        <th scope="col">Course</th>
+        <th scope="col">Title</th>
+        <th scope="col">Grade</th>
+      </tr>
+      <tr>
+        <td>CS 61B</td>
+        <td>Data Structures</td>
+        <td>A+</td>
+      </tr>
+      <tr>
+        <td>CS 286A</td>
+        <td>Introduction to Database System</td>
+        <td>A</td>
+      </tr>
+      <tr>
+        <td>CS 267</td>
+        <td>Applications of Parallel Computers</td>
+        <td>A</td>
+      </tr>
+      <tr>
+        <td>CS 289A</td>
+        <td>Introduction to Machine Learning</td>
+        <td>Pass</td>
+      </tr>
+      <tr>
+        <td>CS 294-131</td>
+        <td>Deep learning Special Topics</td>
+        <td>Pass</td>
+      </tr>
+      <tr>
+        <td>EE 128</td>
+        <td>Feedback Control System</td>
+        <td>A+</td>
+      </tr>
+      <tr>
+        <td>MEC 232</td>
+        <td>Advanced Control System</td>
+        <td>A</td>
+      </tr>
+      <tr>
+        <td>Math 228A&amp;B</td>
+        <td>Numerical Solution of Differential Equations</td>
+        <td>A+</td>
+      </tr>
+        <tr>
+        <td>Math 273</td>
+        <td>Topics in Numerical Analysis</td>
+        <td>A</td>
+      </tr>
+         <tr>
+        <td>ME241</td>
+        <td>Marine Hydrodynamics</td>
+        <td>A+</td>
+      </tr>       
+    </table>
+</section>
 
-      <p> 
-         2013 - 2015:
-	 <br> <em>M.S.</em> Mechanical Engineering    
-         <br> University of California, Berkeley
-      </p>
-
-      <p> 
-         2009 - 2013:
-	 <br> <em>B.S.</em> Naval Architecture and Ocean Engineering     
-	 <br> Dalian University of Technology
-      </p>
-</div>
-
-<div class="second">
-
-</div>
 
 <div class = "footer">
    Copyright &copy 2018 Bo Yang. Hosted by GitHub Pages. All right reserved.
 </div>
-
+</div>
 </body>
 </html>
