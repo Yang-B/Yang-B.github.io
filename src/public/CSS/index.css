@@ -1,0 +1,25 @@
+/* section - all*/
+section{padding: 0 0px;}
+/* section intro */
+section.intro{margin: 0px 0 0px 0; padding: 30px 195px 0px 195px; text-align: justify; text-justify: inter-word;}
+/* section external */
+section.external{margin: 0px 0; padding: 30px 250px 40px 250px; }
+section.external aside{width:25%; float:left; text-align:center; margin-bottom: 25px}
+section.external aside a{
+    margin: 15px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70px; height: 70px;
+    background: no-repeat center bottom; 
+    background-size: contain; }
+/**section.external aside a span{display:none;}
+/*section.external aside h3 a{color: #000; text-decoration:none;}
+section.external aside h3 a:hover{text-decoration:underline;}*/
+section.external aside a.icon.github {background-image: url(../Figures/github.svg);}
+section.external aside a span{display: none;}
+section.external aside a.icon.linked {background-image: url(../Figures/linkedin.svg);}
+section.external aside a.icon.email {background-image: url(../Figures/email.svg);}
+section.external aside a.icon.phone {background-image: url(../Figures/cv.svg);}
+section.external aside a.icon.googleScholar {background-image: url(../Figures/google-scholar.svg);}
+section.external aside a.icon.youtube {background-image: url(../Figures/youtube.svg);}
