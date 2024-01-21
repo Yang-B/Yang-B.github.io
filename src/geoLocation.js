@@ -43,10 +43,22 @@ async function sendDataToAzureSQL(data) {
     }
 }
 
+function extractIPAddress(inputString) {
+    // Split the input string by the colon (":")
+    const parts = inputString.split(':');
+
+    // The first part (index 0) will be the IP address
+    const ipAddress = parts[0];
+
+    return ipAddress;
+}
+
 // Define a route to get the user's location
 router.get('/get-location', async (req, res) => {
-  const userIpAddress = req.ip; // Get the user's IP address from the request
-  console.log("ip", userIpAddress);
+  // Get the user's IP address from the request headers
+  const userIpAndPort = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  const userIpAddress = extractIPAddress(userIpAndPort)
+  console.log("ip", userIpAddress); //::ffff:169.254.129.1 // 98.42.225.197:44934
   const location = await getLocation(userIpAddress);
   
   if (location) {
