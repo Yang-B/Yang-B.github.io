@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocation Result</title>
+</head>
+<body>
+  <h1>Geolocation Result</h1>
+  <p>City: <span id="city"></span></p>
+  <p>Region: <span id="region"></span></p>
+  <p>Country: <span id="country"></span></p>
+  <p>Coordinates (latitude, longitude): <span id="coordinates"></span></p>
+
+  <script>
+    // Fetch the geolocation data and update the HTML content
+    fetch('/get-location')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('city').textContent = data.city;
+        document.getElementById('region').textContent = data.region;
+        document.getElementById('country').textContent = data.country;
+        document.getElementById('coordinates').textContent = data.loc;
+      })
+      .catch(error => {
+        console.error('Error fetching location:', error);
+      });
+  </script>
+</body>
+</html>
