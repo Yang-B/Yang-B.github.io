@@ -32,8 +32,8 @@ async function sendDataToAzureSQL(data) {
         const request = new sql.Request(pool);
 
         const query = `
-            INSERT INTO ViewerGeoData (City, Region, Country, Coordinates, Timestamp)
-            VALUES ('${data.city}', '${data.region}', '${data.country}', '${data.coordinates}', GETDATE())
+            INSERT INTO ViewerGeoData (Page, City, Region, Country, Coordinates, Timestamp)
+            VALUES ('${data.pageKey}', '${data.city}', '${data.region}', '${data.country}', '${data.coordinates}', GETDATE())
         `;
 
         const result = await request.query(query);
@@ -54,11 +54,13 @@ function extractIPAddress(inputString) {
 }
 
 // Define a route to get the user's location
-router.get('/get-location', async (req, res) => {
+router.get('/get-location/:pageKey', async (req, res) => {
+  // Get the value of the additional parameter from the route URL
+  const pageKey = req.params.pageKey;
   // Get the user's IP address from the request headers
-  const userIpAndPort = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  const userIpAndPort = req.headers['x-forwarded-for'] || req.socket.remoteAddress; // e.g."98.42.225.197:44934"
   const userIpAddress = extractIPAddress(userIpAndPort)
-  console.log("ip", userIpAddress); //::ffff:169.254.129.1 // 98.42.225.197:44934
+  console.log("ip", userIpAddress);
   const location = await getLocation(userIpAddress);
   
   if (location) {
@@ -68,6 +70,7 @@ router.get('/get-location', async (req, res) => {
 
           // Send the location data to Azure SQL Database
           const dataToInsert = {
+              pageKey: pageKey,
               city: location.city,
               region: location.region,
               country: location.country,
