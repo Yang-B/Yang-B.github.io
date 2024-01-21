@@ -45,8 +45,7 @@ async function sendDataToAzureSQL(data) {
 
 // Define a route to get the user's location
 router.get('/get-location', async (req, res) => {
-  // Get the user's IP address from the request headers
-  const userIpAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  const userIpAddress = req.ip; // Get the user's IP address from the request
   console.log("ip", userIpAddress);
   const location = await getLocation(userIpAddress);
   
