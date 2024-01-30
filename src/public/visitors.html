@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visitors From</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map { 
+            height: 1400px; 
+            width: 100%; 
+            position: relative; 
+        }
+        #statistics {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000; /* Ensure it's on top of the map */
+            max-width: 300px; /* Adjust as needed */
+            color: grey;
+        }
+        #chartContainer {
+            width: 300px; /* Adjust as needed */
+            height: 180px; /* Adjust as needed */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+        <div id="statistics">
+            <div id="chartContainer">
+                <canvas id="monthlyStatsChart"></canvas>
+            </div>
+            <p id="overallTotal"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="utils/displayViewerGeos.js"></script>
+    <script src="utils/displayViewerStats.js"></script>
+</body>
+</html>

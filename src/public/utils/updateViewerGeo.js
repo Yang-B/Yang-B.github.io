@@ -1,6 +1,6 @@
 function updateGeoLocationData(pageKey) {
     // Construct the URL with the pageKey parameter
-    const url = `/get-location/${pageKey}`;
+    const url = `/get-viewer-location/${pageKey}`;
   
     fetch(url)
       .then(response => response.json())
