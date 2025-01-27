@@ -10,6 +10,7 @@ function initMap() {
   fetch('/get-viewer-locations')
     .then(response => response.json())
     .then(locations => {
+        locations.reverse(); // Reverses the array order
         locations.forEach(location => {
             L.marker([location.latitude, location.longitude]).addTo(map)
                 .bindPopup(`<b>Page:</b> ${location.page}<br><b>City:</b> ${location.city}<br><b>Region:</b> ${location.region}<br><b>Country:</b> ${location.country}<br><b>Timestamp:</b> ${location.timestamp}`);
