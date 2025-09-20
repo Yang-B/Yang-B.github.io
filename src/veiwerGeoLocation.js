@@ -94,7 +94,43 @@ router.get('/get-viewer-location/:pageKey', async (req, res) => {
 router.get('/get-viewer-locations', async (req, res) => {
     try {
         await sql.connect(config);
-        const result = await sql.query('SELECT Page, City, Region, Country, Coordinates, Timestamp FROM ViewerGeoData');
+
+        // Get pagination parameters from query string
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const offset = (page - 1) * limit;
+
+        // Calculate 3 months ago date
+        const threeMonthsAgo = new Date();
+        threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+        const formattedThreeMonthsAgo = threeMonthsAgo.toISOString().split('T')[0];
+
+        // Create request with parameters
+        const request = new sql.Request();
+        request.input('threeMonthsAgo', sql.Date, formattedThreeMonthsAgo);
+        request.input('limit', sql.Int, limit);
+        request.input('offset', sql.Int, offset);
+
+        // Get total count for pagination metadata
+        const countQuery = `
+            SELECT COUNT(*) as TotalCount
+            FROM ViewerGeoData
+            WHERE Timestamp >= @threeMonthsAgo
+        `;
+        const countResult = await request.query(countQuery);
+        const totalCount = countResult.recordset[0].TotalCount;
+
+        // Get paginated data with recent visitors first
+        const dataQuery = `
+            SELECT Page, City, Region, Country, Coordinates, Timestamp
+            FROM ViewerGeoData
+            WHERE Timestamp >= @threeMonthsAgo
+            ORDER BY Timestamp DESC
+            OFFSET @offset ROWS
+            FETCH NEXT @limit ROWS ONLY
+        `;
+        const result = await request.query(dataQuery);
+
         const locations = result.recordset.map(record => {
             const [latitude, longitude] = record.Coordinates.split(',');
             return {
@@ -107,7 +143,19 @@ router.get('/get-viewer-locations', async (req, res) => {
                 timestamp: record.Timestamp
             };
         });
-        res.json(locations);
+
+        // Return paginated response with metadata
+        res.json({
+            data: locations,
+            pagination: {
+                currentPage: page,
+                pageSize: limit,
+                totalCount: totalCount,
+                totalPages: Math.ceil(totalCount / limit),
+                hasNextPage: page < Math.ceil(totalCount / limit),
+                hasPreviousPage: page > 1
+            }
+        });
     } catch (err) {
         res.status(500).send(err.message);
     }
