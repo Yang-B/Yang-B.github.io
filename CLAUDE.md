@@ -8,20 +8,20 @@ This is Bo Yang's personal website - a static portfolio website showcasing profe
 
 ## Deployment
 
-The project is automatically deployed to GitHub Pages via GitHub Actions when pushing to the main branch. The workflow:
-- Uploads the `src/public/` directory contents
-- Deploys to GitHub Pages at: https://yang-b.github.io/personal-web/
+The site is deployed to GitHub Pages automatically on push to `main`. All static files live at the repository root and are served directly.
+
+- **URL**: https://yang-b.github.io/
+- **Source**: GitHub Actions workflow (`.github/workflows/main_boyang.yml`)
 
 To enable GitHub Pages:
 1. Go to repository Settings > Pages
 2. Under "Build and deployment", select "GitHub Actions" as the source
-3. The workflow will automatically deploy on push to main branch
 
 ## Architecture
 
 ### Main Components
 
-**Static Content** (`src/public/`):
+**Static Content** (repository root):
 - HTML pages: `index.html`, `experience.html`, `publications.html`, `interest.html`
 - CSS files in `/CSS/` directory
 - Static assets in `/Figures/` (travel photos), `/Documents/` (CV, thesis, papers), `/Conference/` (presentations)
@@ -41,5 +41,4 @@ To enable GitHub Pages:
 
 - Pure static website with no backend dependencies
 - No build process required
-- All content served directly from the `src/public/` directory
-- To preview locally, use any static file server (e.g., `python -m http.server` from `src/public/` directory)
+- To preview locally, use any static file server (e.g., `python -m http.server` from the repo root)
