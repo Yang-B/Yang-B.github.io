@@ -22,7 +22,7 @@ a {color: #0073ff;}
 a:visited{color: #65b1ff;}
 header {
   font-family: 'Open Sans', sans-serif;
-  height:430px; background: rgb(235,235,235) url(../Figures/banner1.jpg) no-repeat center bottom; position: relative;
+  height:430px; background: rgb(235,235,235) url(../Figures/banner5.jpg) no-repeat center 35%; background-size: cover; position: relative;
 }
 
 header h1 {
